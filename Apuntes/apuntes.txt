@@ -1,0 +1,32 @@
+A partir de Node 18:
+    - Para que el servidor lea los cambios realizados en código en tiempo real: node --watch index.js
+    - Para debuguear, se utiliza el siguiente comando: DEBUG=express:*,app:* (Seguido del comando que ejecuta la aplicacion)
+
+A partir de Node 19:
+    - Se implementa testRunner para hacer Tests (A partir de Node 20 está estable)
+
+    - npm install sharp: Libreria para manipular imagenes
+    - npm install cookie-parser: Libreria para leer las cookies
+    - npm install cors: Libreria para limitar el acceso de la API a solo mismo dominio de origen
+    - npm install dotenv: Libreria para leer Variables de Entorno
+    - npm install debug: Libreria para Debuguear
+    - npm install mysql2: Libreria para conectar con MySQL
+    - npm install @hapi/joi: Libreria para Validaciones
+    - npm install @hapi/boom: Libreria para formar response HTTP
+    - npm install nodemon -D: Libreria para reiniciar automáticamente el servidor cuando se detecta un cambio
+    - npm install jest -D: Libreria para hacer testing (la d es para instalar solo para desarrollo)
+    - npm install supertest -D: Libreria para hacer super testings
+    - npm install morgan: Libreria para imprimir en consola todas las solicitudes que llegan al servidor
+    - npm install compression: Libreria para comprimir Responses
+    - npm install helmet: Libreria para esconder headers de Responses y minimizar la posibilidad de ataques
+    - Passport.js: Libreria para aplicar diferentes tipos de autenticación 
+
+Arquitectura/Estructura/Patrón de Diseño.
+
+    - Routes/Controllers: Rutas separadas por Convencion, se manejan las respuestas, los errores, se implementan los middleware y 
+        cualquier otra validación pertinente.
+    - Services: Lógica de Negocio, solo debe recibir los parámetros que requiere para usar en la lógica
+    - Repositories: En caso de que no se utilice un ORM, es la capa encargada de obtener los datos/objetos, bien separadas
+        de una BBDD, de alguna Integración (API), Archivo, Etc
+    - Schemas: Validaciones que se realizan a los parámetros requeridos para las acciones de cada endpoint
+    - lib: SDK´s, herramientas de conexión a integraciones de cualquier tipo
