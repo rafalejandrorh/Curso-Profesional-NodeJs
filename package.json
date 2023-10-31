@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "api": "nodemon API/index.js",
+    "api:watch": "node --watch API/index.js",
     "api:debug": "DEBUG = express:*, app:* npm run api",
     "api:inspect": "nodemon --inspect API/index.js",
     "test": "jest",
